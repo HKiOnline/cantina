@@ -1,0 +1,6 @@
+{{define "equipment"}}{{if .Equipment }}Equipment:
+{{template "weapons" .}}{{end}}{{end}}
+
+{{define "weapons"}}{{if .Equipment.Weapons }}Weapons: {{range $i, $el := .Equipment.Weapons}}{{if $i}},{{end}}{{$el.Name}} (Damage; {{$el.Damage}}, Critical; {{$el.Critical}}, Range; [{{$el.Range}}], {{template "attachments" $el}}){{end}}.{{end}}{{end}}
+{{define "attachments"}}{{if .Attachments}}Attachments: {{range .Attachments}}{{.Name}}{{template "mods" .}}{{end}}{{end}}{{end}}
+{{define "mods"}}{{if .InstalledModifications}} [{{range  $i, $el := .InstalledModifications}}{{if $i}},{{end}}{{title $el.Name}}{{end}}]{{end}}{{end}}

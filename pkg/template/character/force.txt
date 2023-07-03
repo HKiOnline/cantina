@@ -1,0 +1,9 @@
+{{define "force"}}
+{{if .Force}}Special Abilities:{{if .Morality}} {{formatForceUsesStatus .Force.Rank .Morality.Value}},{{else}} Force user,{{end}} Rank {{.Force.Rank}}. {{template "force_powers" .Force}}{{end}}{{end}}
+
+
+{{define "force_powers"}}{{if .Powers}}{{range $i, $el := .Powers}}
+{{title $el.Name}}. Force Power. (Basic: {{template "basic_powers" $el.Basic}}. {{template "upgrade_powers" $el.Upgrades}}).{{end}}{{end}}{{end}}
+
+{{define "basic_powers"}}{{range $i, $el := .}}{{$el}}{{end}}{{end}}
+{{define "upgrade_powers"}}{{range $i, $el := .}}{{if $i}}. {{end}}{{title $el.Type}}: {{$el.Description}}{{end}}{{end}}

@@ -1,0 +1,1 @@
+{{define "specializations"}}{{range $i, $specialization := .Career.Specializations}}{{if $i}}, {{end}}{{title $specialization.Name}}{{end}}{{end}}

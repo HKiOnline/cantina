@@ -1,0 +1,219 @@
+syntax = "proto3";
+
+package character;
+
+option go_package = "./character";
+
+
+message Collection {
+  repeated Character characters = 1;
+}
+
+message Character {
+  string id = 1;
+  string name = 2;
+  repeated string tags = 20;
+  Npc npc = 3;
+  Xp xp = 4;
+  Credits credits = 5;
+  Description description = 6;
+  Morality morality = 7;
+  Motivation motivation = 8;
+  Career career = 9;
+  repeated Talent talents = 10;
+  repeated Ability abilites = 19;
+  int32 soak = 11;
+  Wounds wounds = 12;
+  Strain strain = 13;
+  Defense defense = 14;
+  Characteristics characteristics = 15;
+  repeated Skill skills = 16;
+  Force force = 17;
+  Equipment equipment = 18;
+}
+
+message Npc {
+  string rank = 1;
+}
+
+message Xp {
+  int32 starting = 1;
+  int32 awarded = 2;
+  int32 available = 3;
+}
+
+message Credits {
+  int32 starting = 1;
+  int32 available = 2;
+}
+
+message Description {
+  string species = 1;
+  string gender = 2;
+  int32 birthYear = 3;
+  string build = 4;
+  string hair = 5;
+  string eyes = 6;
+  string notableFeatures = 7;
+}
+
+message Morality {
+  int32 value = 1;
+  string strength = 2;
+  string weakness = 3;
+}
+
+message Motivation {
+  string type = 1;
+  string specific = 2;
+}
+
+message Career {
+  string name = 1;
+  string source = 2;
+  repeated Specialization specializations = 3;
+  repeated string careerSkills = 4;
+}
+
+message Specialization {
+  string name = 1;
+  string source = 2;
+  repeated string additionalCareerSkills = 3;
+}
+
+message Ability {
+  string name = 1;
+  string description = 2;
+  int32 rank = 3;
+}
+
+message Talent {
+  string name = 1;
+  string career = 2;
+  string specialization = 3;
+  int32 rank = 4;
+  string description = 5;
+  bool isForceTalent = 6;
+  bool isActive = 7;
+  bool isConflictSource = 8;
+  string source = 9;
+}
+
+message Wounds {
+  int32 threshold = 1;
+  int32 current = 2;
+}
+
+message Strain {
+  int32 threshold = 1;
+  int32 current = 2;
+}
+
+message Defense {
+  int32 ranged = 1;
+  int32 melee = 2;
+}
+
+message Characteristics {
+  int32 brawn = 1;
+  int32 agility = 2;
+  int32 intellect = 3;
+  int32 cunning = 4;
+  int32 willpower = 5;
+  int32 presence = 6;
+}
+
+message Skill {
+  string name = 1;
+  int32 rank = 2;
+  string charasteristic = 3;
+  bool isCareerSkill = 4;
+  string type = 5;
+}
+
+message Force {
+  int32 rank = 1;
+  repeated ForcePower powers = 2;
+}
+
+message ForcePower {
+  string name = 1;
+  string source = 2;
+  repeated string basic = 3;
+  repeated ForcePowerUpgrade upgrades = 4;
+}
+
+message ForcePowerUpgrade {
+  string type = 1;
+  string description = 2;
+  int32 row = 3;
+  int32 column = 4;
+}
+
+message Equipment {
+  repeated Weapon weapons = 1;
+  repeated Armor armor = 2;
+  repeated Gear gear = 3;
+}
+
+message Weapon {
+  string name = 1;
+  string manufacturer = 2;
+  string type = 3;
+  string skill = 4;
+  int32 damage = 5;
+  int32 critical = 6;
+  string range = 7;
+  int32 encumbrance = 8;
+  int32 hardpoints = 9;
+  int32 price = 10;
+  int32 rarity = 11;
+  bool isRestricted = 12;
+  repeated string special = 13;
+  repeated string sources = 14;
+  string scale = 15;
+  repeated Attachment attachments = 16;
+  int32 amount = 17;
+}
+
+message Attachment {
+  string name = 1;
+  string source = 2;
+  string type = 3;
+  int32 hardpointsRequired = 4;
+  string baseModifiers = 5;
+  repeated Modification installedModifications = 6;
+  repeated Modification optionalModifications = 7;
+  int32 price = 8;
+  int32 rarity = 9;
+  bool isRestricted = 10;
+}
+
+message Modification {
+  string name = 1;
+  string source = 2;
+  string type = 3;
+  string modifier = 4;
+}
+
+message Armor {
+  string name = 1;
+  string source = 2;
+  int32 defense = 3;
+  int32 soak = 4;
+  int32 encumbrance = 5;
+  int32 hardpoints = 6;
+  int32 price = 7;
+  int32 rarity = 8;
+  bool isRestricted = 9;
+}
+
+message Gear {
+  string name = 1;
+  string source = 2;
+  int32 encumbrance = 3;
+  int32 price = 4;
+  int32 rarity = 5;
+  bool isRestricted = 6;
+  int32 amount = 7;
+}

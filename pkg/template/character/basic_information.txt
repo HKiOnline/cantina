@@ -1,0 +1,2 @@
+{{define "basic_information"}}{{.Name}} {{if .Npc}}(NPC; {{title .Npc.Rank}}){{end}}.
+{{if .Description}}{{title .Description.Species}} {{.Description.Gender}}, born {{formatYear .Description.BirthYear}}.{{end}}{{end}}

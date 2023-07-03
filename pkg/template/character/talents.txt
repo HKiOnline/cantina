@@ -1,0 +1,1 @@
+{{define "talents"}}Talents: {{range $i, $talent := .Talents}}{{if $i}}, {{end}}{{title $talent.Name}} {{$talent.Rank}}{{end}}.{{end}}

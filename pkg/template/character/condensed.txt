@@ -1,0 +1,24 @@
+{{template "basic_information" .}}
+{{- if .Career}}
+Career: {{title .Career.Name}} ({{template "specializations" .}}).
+{{- end -}}
+{{- if .Motivation}}
+Motivation: {{title .Motivation.Type}} ({{title .Motivation.Specific}}).
+{{- end -}}
+{{- if .Morality}}
+Morality: {{.Morality.Value}}, {{title .Morality.Strength}} vs. {{title .Morality.Weakness}}.
+{{- end}}
+
+{{template "characteristics" .}}
+
+{{template "vitals" .}}
+
+{{template "skills" .}}
+{{template "talents" .}}
+
+{{template "force" .}}
+
+{{template "equipment" .}}
+
+{{if .Credits}}Credits: {{.Credits.Available}} {{end}}
+{{if .Xp}}XP Available: {{.Xp.Available}} {{end}}

@@ -1,0 +1,1 @@
+{{define "vitals"}}Soak Value: {{.Soak}}, Wound Threshold: {{.Wounds.Threshold}}, Strain Threshold: {{.Strain.Threshold}}, Defense (M/R): {{.Defense.Melee}}/{{.Defense.Ranged}}.{{end}}

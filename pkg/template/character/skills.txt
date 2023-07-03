@@ -1,0 +1,1 @@
+{{define "skills"}}Skills: {{range $i, $skill := .Skills}}{{if $i}}, {{end}}{{title $skill.Name}} {{$skill.Rank}}{{end}}.{{end}}

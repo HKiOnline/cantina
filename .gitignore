@@ -1,0 +1,7 @@
+
+# Development files and directories
+bin/
+db/
+
+# OS Specific files
+.DS_Store

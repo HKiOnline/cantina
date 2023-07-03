@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package armada;
+
+option go_package = "./armada";
+
+
+message Collection {
+  repeated Ship ships = 1;
+}
+
+message Ship {
+    string name = 1;
+  }

@@ -1,0 +1,2 @@
+{{define "characteristics"}}| B | A | I | C | W | P |
+| {{.Characteristics.Brawn}} | {{.Characteristics.Agility}} | {{.Characteristics.Intellect}} | {{.Characteristics.Cunning}} | {{.Characteristics.Willpower}} | {{.Characteristics.Presence}} |{{end}}
